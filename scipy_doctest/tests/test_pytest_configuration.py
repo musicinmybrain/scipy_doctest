@@ -94,7 +94,6 @@ def test_alt_checker(pytester):
 
 def test_alt_checker_doctestplus(pytester):
     """Test an alternative Checker, from pytest-doctestplus."""
-
     pytest.importorskip("pytest_doctestplus")
 
     # create a temporary conftest.py file
@@ -145,5 +144,3 @@ def test_alt_checker_doctestplus(pytester):
     f_ = pytester.makepyfile(src_)
     result = pytester.inline_run(f_, '--doctest-modules')
     assert result.ret == pytest.ExitCode.TESTS_FAILED
-
-
